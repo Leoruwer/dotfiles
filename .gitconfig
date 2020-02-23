@@ -1,0 +1,28 @@
+[user]
+	email = leonardo.ruwer@gmail.com
+	name = leoruwer
+
+[alias]
+	sw = switch
+	swc = switch -c
+  swm = !git switch master && git pull origin master
+  swd = !git switch develop && git pull origin develop
+	swp = !git switch $1 && git pull origin
+
+  commitall = !git add . && git commit -m
+  pushall = !git push origin HEAD
+  forcepushall = !git push -f origin HEAD
+
+  cp = !git fetch && git cherry-pick
+
+  wip = !git add . && git commit -m 'WIP: :construction:'
+  prettier = !git add . && git commit -m 'Prettier :butterfly:'
+
+  done = !git switch master && git pull && git branch -D @{-1}
+
+  tags = tag -l
+
+  undo = reset --soft HEAD^
+
+[core]
+  editor = code -w -n
