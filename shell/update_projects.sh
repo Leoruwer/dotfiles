@@ -61,9 +61,9 @@ pull_at_develop_branch() {
 
 update_main_branch() {
   if branch_exists main; then
-    show_pulling_message "main"
+    show_pulling_message main
   else
-    show_pulling_message "master"
+    show_pulling_message master
   fi
 
   pushd $dir > /dev/null
@@ -72,7 +72,7 @@ update_main_branch() {
 }
 
 update_develop_branch() {
-  show_pulling_message "develop"
+  show_pulling_message develop
 
   pushd $dir > /dev/null
   pull_at_develop_branch & spinner
@@ -80,6 +80,8 @@ update_develop_branch() {
 }
 
 for repo in $(ls -d -1 ../*/.git 2>/dev/null); do
+  echo
+
   dir=${repo/\/.git//}
 
   update_main_branch

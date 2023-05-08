@@ -14,7 +14,7 @@ spinner() {
     printf "${Blue}"
     printf "\b\b%s " "${spin:i++%n:1}"
     printf "${ColorOff}"
-    sleep 0.1
+    sleep 0.075
   done
   printf "${Green}\b\b✓${ColorOff}"
   echo
